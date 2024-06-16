@@ -1,16 +1,26 @@
-import * as React from "react";
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
-import ProTip from "./ProTip";
-import { OrderForm } from "./components/OrderForm";
+
+import { useTelegram } from "./hooks/useTelegram";
+
+import './App.css';
+import { useEffect } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { CssBaseline } from "@mui/material";
 
 
 export default function App() {
+  const {tg} = useTelegram();
+
+  useEffect(() => {
+    tg.ready();
+  }, [])
+
   return (
-    <Container maxWidth="sm">
-      <OrderForm />
+    <Container maxWidth="sm" sx={{height: '100vh'}}>
+      <CssBaseline />
+      <Header />
+      <Footer />
     </Container>
   );
 }

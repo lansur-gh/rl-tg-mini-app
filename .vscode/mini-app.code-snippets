@@ -1,0 +1,20 @@
+{
+	"React component JSX": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "recomjs",
+		"body": [
+			"export const ${1:Component} = (props) => {",
+			"    const {} = props;",
+			"",
+			"    return (",
+			"        <div>",
+			"            ${1:Component}",
+			"        </div>",
+			"    )",
+			"}",
+			"",
+			"export default ${1:Component}"
+		],
+		"description": "React component JS"
+	}
+}
